@@ -1,0 +1,35 @@
+<div class="billing-popup__title <%= without_delimiters ? '-without-delimiter' : '' %>">
+	<%= title %>
+</div>
+<div data-ref="content"></div>
+<div class="l-overlay -radial hide" data-ref="loader"></div>
+<div class="l-overlay -fill -radial s-vertical-center s-horizont-center hide" data-ref="success">
+	<div class="s-text-center s-color -success c-popup__text">
+		<i class="s-icon -m -check"></i>
+			Successfully
+	</div>
+</div>
+<div class="l-overlay -fill -radial s-vertical-center s-horizont-center hide" data-ref="error">
+	<div class="s-text-center c-popup__text">
+		<div class="s-color -danger">
+			<i class="s-icon -m -alert"></i>
+			Error
+		</div>
+		<% _.each(errors, function(error) { %>
+			<div class="s-color -danger" style="padding-top: 5px;"><%= error %></div>
+		<% }); %>
+        <div style="padding-top: 15px;">
+            Resend or contact our Support Team at<br/>
+            <a class="s-link" href="#">support@test.com</a>
+        </div>
+		<div class="l-btn-wrapper -center">
+			<a class="s-btn -hollow -xs h-btn -row" data-ref="tryAgain">
+				<i class="s-icon -repeat"></i>
+				<span class="s-btn__text">Try again</span>
+			</a>
+			<a class="s-btn -hollow -xs" data-ref="goBack">
+				<span class="s-btn__text">Go back</span>
+			</a>
+		</div>
+	</div>
+</div>
